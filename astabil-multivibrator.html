@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pavlyas Bence Porfolio</title>
+</head>
+<body>
+
+    <ul>
+
+        <li class="dropdown">
+              <a href="Pavlyasb_portfolio.html" class="dropbtn">Rólam</a>
+              <div class="dropdown-content">
+
+            </li>
+        
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">11.évfolyam</a>
+          <div class="dropdown-content">
+            <a href="astabil-multivibrator.html">Astabil multivibrátor</a>
+          </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">12.évfolyam</a>
+            <div class="dropdown-content">
+              <a href="#">Hamarosan...</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">13.évfolyam</a>
+            <div class="dropdown-content">
+                <a href="#">Hamarosan...</a>
+            </div>
+          </li>
+        <li style="float:right"><a class="active" href="index.html">Rólam</a></li>
+      </ul>
+    <div class="header">
+        <h2>Astabil multivibrátor</h2>
+
+    <div class="szoveg">
+        <p>A 2led felváltva világít. <br>
+            A villogás sebessége az Rb1-C1 és Rb2-C2 szorzatától függ.<br>
+            Minél nagyobb az érték annál lassabb lesz.<br></p>
+    </div>
+    
+    <div class="container">
+        <div class="mySlides">
+
+          <img src="./images/0.jpg" style="width:50%" >
+        </div>
+      
+        <div class="mySlides">
+
+          <img src="./images/1.jpg" style="width:50%" >
+        </div>
+      
+        <div class="mySlides">
+
+          <img src="./images/2.jpg" style="width:50%" >
+        </div>
+        <div class="mySlides">
+
+            <img src="./images/4.jpg" style="width:50%">
+          </div>
+        <div class="buttons">
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+        
+    </div>
+    <div class="szoveg" style="text-align: left;">
+
+
+        <h3>Rövid leírás: </h3>
+        <p>
+            
+            
+            <br>Ez az áramkör négyszögjelet állít elő, ha tápfeszültséget kapcsolunk rá.<br>
+            A tápfeszültséget rákapcsolva a kimenetein (2 db kimenet) egy adott ideig 0 feszültség szint van a másikon ugyanakkor tápfeszültség. <br>
+            Bizonyos idő múlva mindkét bemenet átbillen felcserélődik az állapotuk.
+            <hr>
+            <h3>Tapasztalat: </h3>
+           
+        </p>
+            <p>
+                Nem volt nehéz feladat,de könnyűsem. Szerencsére megbírkoztam vele.<br>
+                
+            </p> 
+    </div>
+    
+    
+</body>
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("demo");
+      let captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+    </script>
+</html>
